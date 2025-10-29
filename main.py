@@ -1,8 +1,6 @@
 # main.py
 
 """
-Main entry point for the Python programming assignment (DLMDSPWP01).
-
 This script orchestrates the full pipeline:
 1.  Uses DatabaseLoader (with SQLAlchemy) to load CSVs into a SQLite DB.
 2.  Uses FunctionFitter (with sqlite3) to find the 4 best functions.
@@ -12,9 +10,7 @@ This script orchestrates the full pipeline:
 
 This design is object-oriented, uses inheritance, includes custom
 exceptions, and uses all required libraries (SQLAlchemy, Pandas, Bokeh)
-as specified in the assignment [cite: 853-933].
 """
-
 import sys
 from src.db_loader import DatabaseLoader
 from src.analysis import FunctionFitter, TestDataMapper
@@ -30,7 +26,7 @@ def main_pipeline():
     """
     try:
         # --- Step 1: Load Data into Database ---
-        # This step uses SQLAlchemy as required [cite: 894]
+        # This step uses SQLAlchemy
         print("--- Step 1: Loading Data into Database ---")
         loader = DatabaseLoader(db_name=DATABASE_FILE)
         loader.run_initial_load()
@@ -58,7 +54,7 @@ def main_pipeline():
         mapper.close()
 
         # --- Step 5: Generate Visualizations ---
-        # This step uses Bokeh as required 
+        # This step uses Bokeh
         print("\n--- Step 5: Generating Visualizations ---")
         generate_plots(best_matches, db_name=DATABASE_FILE)
         
