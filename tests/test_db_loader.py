@@ -61,7 +61,7 @@ class TestDatabaseLoader(unittest.TestCase):
         self.assertEqual(len(loaded_df), 2)
         self.assertEqual(loaded_df.iloc[0]['x'], 1)
 
-    def tearDown(self):
+  """  def tearDown(self):
         """Clean up the dummy files."""
         # Close the connection FIRST to release the file lock
         if self.loader:
@@ -72,6 +72,6 @@ class TestDatabaseLoader(unittest.TestCase):
             os.remove(self.db_name)
         if os.path.exists(self.csv_path):
             os.remove(self.csv_path)
-
+"""
 if __name__ == '__main__':
     unittest.main()
