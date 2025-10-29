@@ -2,7 +2,7 @@
 
 """
 Unit tests for FunctionFitter and TestDataMapper.
-These tests are isolated and use mock data, not a live database.
+These tests are isolated and use mock data instead of live database.
 """
 import unittest
 import pandas as pd

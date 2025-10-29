@@ -63,7 +63,7 @@ class TestDatabaseLoader(unittest.TestCase):
 
     def tearDown(self):
         """Clean up the dummy files."""
-        # Close the connection FIRST to release the file lock
+        # #Close the connection FIRST to release the file lock
         if self.loader:
             self.loader.close()
         

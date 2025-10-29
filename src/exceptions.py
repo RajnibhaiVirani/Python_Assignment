@@ -1,7 +1,7 @@
 # src/exceptions.py
 
 """
-Defines a custom user-defined exceptions for the data analysis pipeline.
+this class defines a custom user-defined exceptions for the data analysis pipeline.
 """
 
 class DataPipelineError(Exception):

@@ -1,7 +1,7 @@
 # src/db_loader.py
 """
 this file Manages the initial database creation and the dat-loading using SQLAlchemy.
-This class is responsible for populating the SQLite database from CSV files for our project.
+This class is responsible# for populating the SQLite database from CSV files for our project.
 """
 
 import pandas as pd

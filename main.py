@@ -41,7 +41,7 @@ def main_pipeline():
             print(f"  {train} -> {ideal} (Max Dev: {max_deviations[train]:.4f})")
         fitter.close()
 
-        # --- Step 3: Map Test Data (sqrt(2) Rule) ---
+        # ---- Step 3: Map Test Data (sqrt(2) Rule) ----
         print("\n--- Step 3: Mapping Test Data ---")
         mapper = TestDataMapper(best_matches, max_deviations, db_name=DATABASE_FILE)
         mapped_df = mapper.map_test_points()

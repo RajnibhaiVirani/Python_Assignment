@@ -6,7 +6,7 @@ This module reads data directly from the database using sqlite3
 and pandas, matching the architecture of the sample code.
 
 This version is enhanced with a professional theme, tabs,
-a 2x2 grid layout, and linked panning for a better
+a 2x2 grid layout, and linked panning for more enhanced
 user experience.
 """
 

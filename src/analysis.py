@@ -179,7 +179,7 @@ class TestDataMapper(DatabaseAnalyzer):
     def save_results_to_db(self, mapped_df: pd.DataFrame):
         """
         Saves the final mapped DataFrame to a new table in the database
-        as required
+        as required.#
         
         Note: This uses the parent's `self.conn` (sqlite3) and pandas,
         not sqlalchemy, to match the sample code's architecture.
