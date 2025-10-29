@@ -54,3 +54,59 @@ class DatabaseAnalyzer:
             print(f"{self.__class__.__name__} disconnected from DB.")
 
 
+# inherits from DatabaseAnalyzer
+class FunctionFitter(DatabaseAnalyzer):
+    """
+    in this class we Select the best 4 ideal functions by minimizing Least-Square Error.
+    Inherits from DatabaseAnalyzer.
+    """
+    def __init__(self, db_name: str = "assignment_data.db"):
+        super().__init__(db_name) # Calls parent __init__
+        self.train_df = self._load_data_from_db("train_data")
+        self.ideal_df = self._load_data_from_db("ideal_data")
+        self.best_matches: dict = {}
+        self.max_deviations: dict = {}
+
+    def find_best_functions(self) -> tuple[dict, dict]:
+        """
+        this class Calculates the Sum of Squared Errors (SSE) for each training
+        function against all 50 ideal functions to find the best fit..
+
+        Returns:
+            tuple[dict, dict]: A tuple containing:
+                - best_matches: {train_col: ideal_col}
+                - max_deviations: {train_col: max_dev}
+        """
+        print("Finding best functions via Least-Square Error...")
+        
+        # Align data on 'x' for accurate comparison
+        train = self.train_df.set_index('x')
+        ideal = self.ideal_df.set_index('x')
+        common_x = train.index.intersection(ideal.index)
+        
+        train_aligned = train.loc[common_x]
+        ideal_aligned = ideal.loc[common_x]
+
+        train_cols = [f'y{i}' for i in range(1, 5)] # y1-y4
+        ideal_cols = [f'y{j}' for j in range(1, 51)] # y1-y50
+        
+        for train_col in train_cols:
+            min_sse = np.inf
+            best_fit = None
+            
+            for ideal_col in ideal_cols:
+                sse = np.sum((train_aligned[train_col] - ideal_aligned[ideal_col])**2)
+                if sse < min_sse:
+                    min_sse = sse
+                    best_fit = ideal_col
+            
+            self.best_matches[train_col] = best_fit
+            
+            # Calculate max deviation for the best pair
+            max_dev = np.max(np.abs(train_aligned[train_col] - ideal_aligned[best_fit]))
+            self.max_deviations[train_col] = max_dev
+
+        print("✅ Best functions found.")
+        return self.best_matches, self.max_deviations
+
+
