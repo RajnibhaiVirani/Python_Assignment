@@ -1,10 +1,8 @@
 # src/analysis.py
 
 """
-Contains the core logic for function fitting and test data mapping.
-
-This module fulfills the OOP and inheritance requirements[cite: 904, 905].
-It uses sqlite3 and pandas for data operations, matching the
+This file Contains the core logic for function fitting and testing data mapping.
+This module uses sqlite3 and pandas for data operations, matching the
 architecture of the provided sample code.
 """
 
@@ -16,9 +14,8 @@ from .exceptions import DataLoadError, AnalysisConfigurationError
 # NEW Class for Inheritance 
 class DatabaseAnalyzer:
     """
-    Base class for analysis modules that need to read from the database.
-    This provides a common connection and data loading mechanism,
-    fulfilling the inheritance requirement.
+    this is the base class for analysis modules that need to read from the database.
+    This provides a common connection and data loading mechanism.
     """
     def __init__(self, db_name: str = "assignment_data.db"):
         """
@@ -57,10 +54,10 @@ class DatabaseAnalyzer:
             print(f"{self.__class__.__name__} disconnected from DB.")
 
 
-# Replaces FunctionSelector, inherits from DatabaseAnalyzer
+# inherits from DatabaseAnalyzer
 class FunctionFitter(DatabaseAnalyzer):
     """
-    Selects the best 4 ideal functions by minimizing Least-Square Error.
+    in this class we Select the best 4 ideal functions by minimizing Least-Square Error.
     Inherits from DatabaseAnalyzer.
     """
     def __init__(self, db_name: str = "assignment_data.db"):
@@ -72,9 +69,8 @@ class FunctionFitter(DatabaseAnalyzer):
 
     def find_best_functions(self) -> tuple[dict, dict]:
         """
-        Calculates the Sum of Squared Errors (SSE) for each training
-        function against all 50 ideal functions to find the best fit.
-        This fulfills the "Least-Square" requirement[cite: 884].
+        this class Calculates the Sum of Squared Errors (SSE) for each training
+        function against all 50 ideal functions to find the best fit..
 
         Returns:
             tuple[dict, dict]: A tuple containing:
@@ -117,8 +113,8 @@ class FunctionFitter(DatabaseAnalyzer):
 # Replaces TestMatcher, inherits from DatabaseAnalyzer
 class TestDataMapper(DatabaseAnalyzer):
     """
-    Maps test data points to the 4 chosen ideal functions using
-    the sqrt(2) deviation criterion[cite: 885].
+    This class Maps test data points to the 4 chosen ideal functions using
+    the sqrt(2) deviation criterion.
     Inherits from DatabaseAnalyzer.
     """
     def __init__(self, best_matches: dict, max_deviations: dict, db_name: str = "assignment_data.db"):
@@ -163,7 +159,7 @@ class TestDataMapper(DatabaseAnalyzer):
 
                 deviation = np.abs(row['y'] - row[ideal_col])
                 
-                # Check if it meets the sqrt(2) criterion [cite: 885]
+                # Checks if it meets the sqrt(2) criterion
                 if deviation <= self.thresholds[ideal_col]:
                     if deviation < min_dev:
                         min_dev = deviation
@@ -184,7 +180,7 @@ class TestDataMapper(DatabaseAnalyzer):
     def save_results_to_db(self, mapped_df: pd.DataFrame):
         """
         Saves the final mapped DataFrame to a new table in the database
-        as required[cite: 900].
+        as required
         
         Note: This uses the parent's `self.conn` (sqlite3) and pandas,
         not sqlalchemy, to match the sample code's architecture.
