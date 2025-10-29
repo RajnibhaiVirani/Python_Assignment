@@ -55,10 +55,10 @@ def main_pipeline():
 
         # --- Step 5: Generate Visualizations ---
         # This step uses Bokeh
-        print("\n--- Step 5: Generating Visualizations ---")
-        generate_plots(best_matches, db_name=DATABASE_FILE)
+      #  print("\n--- Step 5: Generating Visualizations ---")
+      #  generate_plots(best_matches, db_name=DATABASE_FILE)
         
-        print("\n--- Pipeline Finished Successfully. ---")
+      #  print("\n--- Pipeline Finished Successfully. ---")
 
     except DataPipelineError as e:
         print(f"\n--- A PIPELINE ERROR OCCURRED ---", file=sys.stderr)
