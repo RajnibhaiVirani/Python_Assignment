@@ -61,11 +61,3 @@ class DatabaseLoader:
         self.load_csv_to_table("data/test.csv", "test_data")
         print("--- All data loaded into database. ---")
     
-    # --- ADD THIS NEW METHOD ---
-    def close(self):
-        """
-        Disposes of the engine's connection to release file locks.
-        """
-        if self.engine:
-            self.engine.dispose()
-            print(f"Engine for '{self.db_name}' disposed.")
