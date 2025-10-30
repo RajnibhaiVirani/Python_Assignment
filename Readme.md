@@ -88,16 +88,10 @@ cd Python_Assignment
 ```
 
 ### 2. Create a Virtual Environment
-**Windows:**
 ```bash
-python -m venv venv
-.
-env\Scripts ctivate
-```
-**macOS/Linux:**
-```bash
-python3 -m venv venv
-source venv/bin/activate
+python -m venv .venv
+source .venv/bin/activate
+
 ```
 
 ### 3. Install Dependencies
@@ -128,8 +122,6 @@ python main.py
 ## 🧪 Run Tests
 ```bash
 python -m unittest discover tests
-```
-
 ```
 
 ---
@@ -197,4 +189,3 @@ This project is submitted as part of **IU DLMDSPWP01**.
 ---
 
 **Made with ❤️ by [Rajnibhai Virani](https://github.com/RajnibhaiVirani)**  
-*International University – Data Science & Programming*
