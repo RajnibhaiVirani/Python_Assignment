@@ -136,19 +136,40 @@ python -m unittest discover tests
 
 ## 🔄 Workflow Diagram
 
-```mermaid
-graph TD
-    A[main.py] --> B[DatabaseLoader]
-    B --> C[Load CSVs -> SQLite via SQLAlchemy]
-    C --> D[FunctionFitter]
-    D --> E[Compute 4x50 SSE Matrix]
-    E --> F[Select 4 Best Ideal Functions]
-    F --> G[TestDataMapper]
-    G --> H[Map Test Points (sqrt(2) rule)]
-    H --> I[Save Results to DB]
-    I --> J[generate_plots()]
-    J --> K[Open assignment_results.html]
-```
+<p align="center">
+
+<pre>
++--------------+
+|   main.py    |
++--------------+
+        |
+        v
++------------------+
+| DatabaseLoader   |
+| (Load CSVs -> DB)|
++------------------+
+        |
+        v
++------------------+
+|  FunctionFitter  |
+| (Least-Squares)  |
++------------------+
+        |
+        v
++------------------+
+|  TestDataMapper  |
+| (sqrt(2) rule)   |
++------------------+
+        |
+        v
++------------------+
+| generate_plots() |
+| (Bokeh output)   |
++------------------+
+</pre>
+
+</p>
+
 
 ---
 
