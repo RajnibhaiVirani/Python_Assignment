@@ -136,9 +136,7 @@ python -m unittest discover tests
 
 ## 🔄 Workflow Diagram
 
-<p align="center">
-
-<pre>
+```mermaid
 +--------------+
 |   main.py    |
 +--------------+
@@ -166,10 +164,7 @@ python -m unittest discover tests
 | generate_plots() |
 | (Bokeh output)   |
 +------------------+
-</pre>
-
-</p>
-
+```
 
 ---
 
@@ -195,7 +190,7 @@ The generated HTML report includes:
 
 ## 📜 License
 
-This project is submitted as part of **IU DLMDSPWP01** assignment.  
+This project is submitted as part of **IU DLMDSPWP01**.  
 **For educational and demonstrative purposes only.**
 
 ---
