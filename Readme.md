@@ -135,7 +135,7 @@ python -m unittest discover tests
 ---
 
 ## 🔄 Workflow Diagram
-
+```
 +--------------+
 |   main.py    |
 +--------------+
@@ -163,7 +163,7 @@ python -m unittest discover tests
 | generate_plots() |
 | (Bokeh output)   |
 +------------------+
-
+```
 
 ---
 
