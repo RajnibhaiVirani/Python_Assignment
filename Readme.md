@@ -235,6 +235,7 @@ Run all tests using Python's built-in `unittest` module:
 
 ```bash
 python -m unittest discover tests
+```
 ⚙️ Features Implemented
 <pre> 🗂️ Database Management: Uses SQLAlchemy to create a DB and pandas to load CSVs. 
 📉 Least-Squares Analysis: FunctionFitter class correctly identifies best-fit functions. 📊 Interactive Visualization: Multi-tab Bokeh report with linked panning and hover tools. ✅ Test Data Mapping: TestDataMapper class implements the √2 deviation criterion. ⚙️ Object-Oriented Design: Clean, modular code separated into logical classes. 🏛️ Inheritance: FunctionFitter and TestDataMapper inherit from a DatabaseAnalyzer base class. 🧪 Unit Testing: Clear, isolated tests for core analysis and database logic. 💡 Custom Exceptions: src/exceptions.py provides robust, user-defined error handling. </pre>
