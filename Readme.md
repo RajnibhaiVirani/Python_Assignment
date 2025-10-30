@@ -47,20 +47,20 @@ Python_Assignment/
 │
 ├── src/
 │   ├── __init__.py
-│   ├── db_loader.py       # → DatabaseLoader (SQLAlchemy)
-│   ├── analysis.py        # → DatabaseAnalyzer, FunctionFitter, TestDataMapper
-│   ├── plotter.py         # → generate_plots() with Bokeh
-│   └── exceptions.py      # → Custom Exceptions
+│   ├── db_loader.py        # → DatabaseLoader (SQLAlchemy)
+│   ├── analysis.py         # → DatabaseAnalyzer, FunctionFitter, TestDataMapper
+│   ├── plotter.py          # → generate_plots() with Bokeh
+│   └── exceptions.py       # → Custom Exceptions
 │
 ├── tests/
-│   ├── test_db_loader.py  # → Tests DatabaseLoader
-│   └── test_analysis.py   # → Tests FunctionFitter & mapping logic
+│   ├── test_db_loader.py   # → Tests DatabaseLoader
+│   └── test_analysis.py    # → Tests FunctionFitter & mapping logic
 │
-├── main.py                # → Runs the complete pipeline
-├── requirements.txt       # → Dependencies (pandas, sqlalchemy, bokeh, numpy)
-├── assignment_pipeline.db # → Generated SQLite DB
-├── assignment_results.html# → Generated Bokeh visualization
-└── README.md              # → This file!
+├── main.py                 # → Runs the complete pipeline
+├── requirements.txt        # → Dependencies (pandas, sqlalchemy, bokeh, numpy)
+├── assignment_pipeline.db  # → Generated SQLite DB
+├── assignment_results.html # → Generated Bokeh visualization
+└── README.md               # → This file!
 ```
 
 ---
@@ -130,13 +130,6 @@ python main.py
 python -m unittest discover tests
 ```
 
-Expected output:
-```text
-.....
-----------------------------------------------------------------------
-Ran 5 tests in 0.03s
-
-OK
 ```
 
 ---
@@ -146,12 +139,12 @@ OK
 ```mermaid
 graph TD
     A[main.py] --> B[DatabaseLoader]
-    B --> C[Load CSVs → SQLite via SQLAlchemy]
+    B --> C[Load CSVs -> SQLite via SQLAlchemy]
     C --> D[FunctionFitter]
-    D --> E[Compute 4×50 SSE Matrix]
+    D --> E[Compute 4x50 SSE Matrix]
     E --> F[Select 4 Best Ideal Functions]
     F --> G[TestDataMapper]
-    G --> H[Map Test Points (√2 rule)]
+    G --> H[Map Test Points (sqrt(2) rule)]
     H --> I[Save Results to DB]
     I --> J[generate_plots()]
     J --> K[Open assignment_results.html]
