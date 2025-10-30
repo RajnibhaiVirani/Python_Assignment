@@ -174,7 +174,7 @@ The generated HTML report includes:
 
 ## 📜 License
 
-This project is submitted as part of **IU DLMDSPWP01**.  
+This project is submitted as part of **IU DLMDSPWP01** assignment.  
 **For educational and demonstrative purposes only.**
 
 ---
