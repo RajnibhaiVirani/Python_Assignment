@@ -8,7 +8,7 @@ This script orchestrates the full pipeline:
 4.  Saves the mapped results back to the database.
 5.  Uses Plotter (with Bokeh) to generate the final visualization.
 
-This design is object-oriented, uses inheritance, includes custom
+This classes are object-oriented, uses inheritance, includes custom
 exceptions, and uses all required libraries (SQLAlchemy, Pandas, Bokeh)
 """
 import sys
