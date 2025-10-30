@@ -163,6 +163,6 @@ def _create_train_plot(train_df, ideal_df, train_col, ideal_col, color, x_range=
     
     p.title.text_font_size = "14pt"
     p.legend.location = "top_left"
-    #p.legend.click_policy = "hide"
+    p.legend.click_policy = "hide"
     
     return p

@@ -188,4 +188,3 @@ This project is submitted as part of **IU DLMDSPWP01**.
 
 ---
 
-**Made with ❤️ by [Rajnibhai Virani](https://github.com/RajnibhaiVirani)**  
