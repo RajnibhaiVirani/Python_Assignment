@@ -136,7 +136,6 @@ python -m unittest discover tests
 
 ## 🔄 Workflow Diagram
 
-```mermaid
 +--------------+
 |   main.py    |
 +--------------+
@@ -164,7 +163,7 @@ python -m unittest discover tests
 | generate_plots() |
 | (Bokeh output)   |
 +------------------+
-```
+
 
 ---
 
