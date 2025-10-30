@@ -135,7 +135,9 @@ python -m unittest discover tests
 ---
 
 ## 🔄 Workflow Diagram
-```
+
+```mermaid
+
 +--------------+
 |   main.py    |
 +--------------+
